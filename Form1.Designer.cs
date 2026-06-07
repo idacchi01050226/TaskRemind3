@@ -29,10 +29,11 @@
         private void InitializeComponent()
         {
             tableLayoutPanel1 = new TableLayoutPanel();
-            FInish_button = new Button();
-            Remind_button = new Button();
             Edit_button = new Button();
-            textBox1 = new TextBox();
+            Remind_button = new Button();
+            FInish_button = new Button();
+            ContentTextBox = new TextBox();
+            TitleTextBox = new TextBox();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -53,15 +54,15 @@
             tableLayoutPanel1.Size = new Size(466, 39);
             tableLayoutPanel1.TabIndex = 0;
             // 
-            // FInish_button
+            // Edit_button
             // 
-            FInish_button.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            FInish_button.Location = new Point(313, 3);
-            FInish_button.Name = "FInish_button";
-            FInish_button.Size = new Size(150, 33);
-            FInish_button.TabIndex = 0;
-            FInish_button.Text = "完了";
-            FInish_button.UseVisualStyleBackColor = true;
+            Edit_button.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            Edit_button.Location = new Point(158, 3);
+            Edit_button.Name = "Edit_button";
+            Edit_button.Size = new Size(149, 33);
+            Edit_button.TabIndex = 2;
+            Edit_button.Text = "編集";
+            Edit_button.UseVisualStyleBackColor = true;
             // 
             // Remind_button
             // 
@@ -73,31 +74,41 @@
             Remind_button.Text = "継続";
             Remind_button.UseVisualStyleBackColor = true;
             // 
-            // Edit_button
+            // FInish_button
             // 
-            Edit_button.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            Edit_button.Location = new Point(158, 3);
-            Edit_button.Name = "Edit_button";
-            Edit_button.Size = new Size(149, 33);
-            Edit_button.TabIndex = 2;
-            Edit_button.Text = "編集";
-            Edit_button.UseVisualStyleBackColor = true;
+            FInish_button.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            FInish_button.Location = new Point(313, 3);
+            FInish_button.Name = "FInish_button";
+            FInish_button.Size = new Size(150, 33);
+            FInish_button.TabIndex = 0;
+            FInish_button.Text = "完了";
+            FInish_button.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // ContentTextBox
             // 
-            textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            textBox1.Location = new Point(0, 0);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(463, 156);
-            textBox1.TabIndex = 1;
+            ContentTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            ContentTextBox.Location = new Point(0, 33);
+            ContentTextBox.Multiline = true;
+            ContentTextBox.Name = "ContentTextBox";
+            ContentTextBox.Size = new Size(463, 123);
+            ContentTextBox.TabIndex = 1;
+            // 
+            // TitleTextBox
+            // 
+            TitleTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            TitleTextBox.Location = new Point(0, -2);
+            TitleTextBox.Multiline = true;
+            TitleTextBox.Name = "TitleTextBox";
+            TitleTextBox.Size = new Size(463, 38);
+            TitleTextBox.TabIndex = 2;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(465, 201);
-            Controls.Add(textBox1);
+            Controls.Add(TitleTextBox);
+            Controls.Add(ContentTextBox);
             Controls.Add(tableLayoutPanel1);
             Name = "Form1";
             Text = "Form1";
@@ -112,6 +123,7 @@
         private Button Edit_button;
         private Button Remind_button;
         private Button FInish_button;
-        private TextBox textBox1;
+        private TextBox ContentTextBox;
+        private TextBox TitleTextBox;
     }
 }

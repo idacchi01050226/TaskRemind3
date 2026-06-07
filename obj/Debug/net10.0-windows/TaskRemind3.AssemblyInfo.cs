@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TaskRemind3")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9813571aa93f53fb10a92424c5d1737f151fee6f")]
 [assembly: System.Reflection.AssemblyProductAttribute("TaskRemind3")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TaskRemind3")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
