@@ -8,7 +8,7 @@ namespace TaskRemind3
     {
         //変数の宣言
         private string Title;//こいつだけ手書きで動作書いた
-        public string content { get; set; }
+        public string Content { get; set; }
 
         //ゲッターとセッター
         public void SetTitle(string Title)
@@ -20,7 +20,10 @@ namespace TaskRemind3
             return this.Title;
         }
 
-
+        public string ToTSV()
+        {
+            
+        }
 
     }
 }
