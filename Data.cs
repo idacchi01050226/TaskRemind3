@@ -9,21 +9,28 @@ namespace TaskRemind3
         //変数の宣言
         private string Title;//こいつだけ手書きで動作書いた
         public string Content { get; set; }
+        public bool CheckStartNow { get; set; }
+        public string SelectDayCombox { get; set; }
+        public int RemindStartHour { get; set; }
+        public int RemindStartMinute { get; set; }
+        public int IntervalDay { get; set; }
+        public int IntervalHour { get; set; }
+        public int IntervalMinute { get; set; }
 
-        //ゲッターとセッター
+        //ゲッターとセッター、一つだけ作った
         public void SetTitle(string Title)
         {
             this.Title = Title;
         }
-        public string GetTitle(string title)
+        public string GetTitle()
         {
             return this.Title;
         }
 
         public string ToTSV()
         {
-            
+            return GetTitle() + "\t" + Content + "\t" + CheckStartNow + SelectDayCombox + "\t" + RemindStartHour + 
+                ":" + RemindStartMinute + "\t" + IntervalDay + "\t" + IntervalHour + ":" + IntervalMinute; 
         }
-
     }
 }

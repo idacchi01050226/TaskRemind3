@@ -30,20 +30,20 @@
         {
             Title_Label = new Label();
             Content_Label = new Label();
-            textBox1 = new TextBox();
-            ContentEnter = new TextBox();
+            TitleTextBox = new TextBox();
+            ContentTextbox = new TextBox();
             Add_Button = new Button();
             checkStartNow = new CheckBox();
             label1 = new Label();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
+            RemindStartHour = new TextBox();
+            RemindStartMinute = new TextBox();
             label2 = new Label();
             SelectDayCombox = new ComboBox();
-            textBox5 = new TextBox();
+            RemindPerMinute = new TextBox();
             label3 = new Label();
-            textBox6 = new TextBox();
+            RemindPerHour = new TextBox();
             label4 = new Label();
-            textBox8 = new TextBox();
+            RemindPerDay = new TextBox();
             label5 = new Label();
             SuspendLayout();
             // 
@@ -66,20 +66,20 @@
             Content_Label.Text = "内容";
             Content_Label.Click += Discription_Label_Click;
             // 
-            // textBox1
+            // TitleTextBox
             // 
-            textBox1.Location = new Point(81, 38);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(349, 27);
-            textBox1.TabIndex = 2;
+            TitleTextBox.Location = new Point(81, 38);
+            TitleTextBox.Name = "TitleTextBox";
+            TitleTextBox.Size = new Size(349, 27);
+            TitleTextBox.TabIndex = 2;
             // 
-            // ContentEnter
+            // ContentTextbox
             // 
-            ContentEnter.Location = new Point(81, 89);
-            ContentEnter.Multiline = true;
-            ContentEnter.Name = "ContentEnter";
-            ContentEnter.Size = new Size(349, 99);
-            ContentEnter.TabIndex = 3;
+            ContentTextbox.Location = new Point(81, 89);
+            ContentTextbox.Multiline = true;
+            ContentTextbox.Name = "ContentTextbox";
+            ContentTextbox.Size = new Size(349, 99);
+            ContentTextbox.TabIndex = 3;
             // 
             // Add_Button
             // 
@@ -110,19 +110,19 @@
             label1.TabIndex = 6;
             label1.Text = "時";
             // 
-            // textBox3
+            // RemindStartHour
             // 
-            textBox3.Location = new Point(96, 236);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(39, 27);
-            textBox3.TabIndex = 7;
+            RemindStartHour.Location = new Point(96, 236);
+            RemindStartHour.Name = "RemindStartHour";
+            RemindStartHour.Size = new Size(39, 27);
+            RemindStartHour.TabIndex = 7;
             // 
-            // textBox4
+            // RemindStartMinute
             // 
-            textBox4.Location = new Point(171, 236);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(39, 27);
-            textBox4.TabIndex = 9;
+            RemindStartMinute.Location = new Point(171, 236);
+            RemindStartMinute.Name = "RemindStartMinute";
+            RemindStartMinute.Size = new Size(39, 27);
+            RemindStartMinute.TabIndex = 9;
             // 
             // label2
             // 
@@ -135,18 +135,21 @@
             // 
             // SelectDayCombox
             // 
+            SelectDayCombox.DropDownStyle = ComboBoxStyle.DropDownList;
             SelectDayCombox.FormattingEnabled = true;
+            SelectDayCombox.Items.AddRange(new object[] { "今日", "明日", "明後日", "カレンダー" });
             SelectDayCombox.Location = new Point(22, 235);
             SelectDayCombox.Name = "SelectDayCombox";
             SelectDayCombox.Size = new Size(68, 28);
             SelectDayCombox.TabIndex = 10;
+            SelectDayCombox.SelectedIndexChanged += SelectDayCombox_SelectedIndexChanged;
             // 
-            // textBox5
+            // RemindPerMinute
             // 
-            textBox5.Location = new Point(186, 286);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(39, 27);
-            textBox5.TabIndex = 14;
+            RemindPerMinute.Location = new Point(186, 286);
+            RemindPerMinute.Name = "RemindPerMinute";
+            RemindPerMinute.Size = new Size(39, 27);
+            RemindPerMinute.TabIndex = 14;
             // 
             // label3
             // 
@@ -157,12 +160,12 @@
             label3.TabIndex = 13;
             label3.Text = "分　おきにリマインドする";
             // 
-            // textBox6
+            // RemindPerHour
             // 
-            textBox6.Location = new Point(96, 286);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(39, 27);
-            textBox6.TabIndex = 12;
+            RemindPerHour.Location = new Point(96, 286);
+            RemindPerHour.Name = "RemindPerHour";
+            RemindPerHour.Size = new Size(39, 27);
+            RemindPerHour.TabIndex = 12;
             // 
             // label4
             // 
@@ -173,12 +176,12 @@
             label4.TabIndex = 11;
             label4.Text = "時間";
             // 
-            // textBox8
+            // RemindPerDay
             // 
-            textBox8.Location = new Point(22, 289);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(39, 27);
-            textBox8.TabIndex = 16;
+            RemindPerDay.Location = new Point(22, 289);
+            RemindPerDay.Name = "RemindPerDay";
+            RemindPerDay.Size = new Size(39, 27);
+            RemindPerDay.TabIndex = 16;
             // 
             // label5
             // 
@@ -194,21 +197,21 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(480, 385);
-            Controls.Add(textBox8);
+            Controls.Add(RemindPerDay);
             Controls.Add(label5);
-            Controls.Add(textBox5);
+            Controls.Add(RemindPerMinute);
             Controls.Add(label3);
-            Controls.Add(textBox6);
+            Controls.Add(RemindPerHour);
             Controls.Add(label4);
             Controls.Add(SelectDayCombox);
-            Controls.Add(textBox4);
+            Controls.Add(RemindStartMinute);
             Controls.Add(label2);
-            Controls.Add(textBox3);
+            Controls.Add(RemindStartHour);
             Controls.Add(label1);
             Controls.Add(checkStartNow);
             Controls.Add(Add_Button);
-            Controls.Add(ContentEnter);
-            Controls.Add(textBox1);
+            Controls.Add(ContentTextbox);
+            Controls.Add(TitleTextBox);
             Controls.Add(Content_Label);
             Controls.Add(Title_Label);
             Name = "AddTask";
@@ -221,20 +224,20 @@
 
         private Label Title_Label;
         private Label Content_Label;
-        private TextBox textBox1;
-        private TextBox ContentEnter;
+        private TextBox TitleTextBox;
+        private TextBox ContentTextbox;
         private Button Add_Button;
         private CheckBox checkStartNow;
         private Label label1;
-        private TextBox textBox3;
-        private TextBox textBox4;
+        private TextBox RemindStartHour;
+        private TextBox RemindStartMinute;
         private Label label2;
         private ComboBox SelectDayCombox;
-        private TextBox textBox5;
+        private TextBox RemindPerMinute;
         private Label label3;
-        private TextBox textBox6;
+        private TextBox RemindPerHour;
         private Label label4;
-        private TextBox textBox8;
+        private TextBox RemindPerDay;
         private Label label5;
     }
 }
