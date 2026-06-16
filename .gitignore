@@ -1,0 +1,15 @@
+# Visual Studio
+.vs/
+bin/
+obj/
+
+# Build results
+bin/
+obj/
+
+# User settings
+*.user
+*.suo
+
+# Rider
+.idea/
