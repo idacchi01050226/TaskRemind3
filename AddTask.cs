@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Text;
 using System.Windows.Forms;
 
@@ -31,17 +32,33 @@ namespace TaskRemind3
         private string SaveAll()
         {
             Data data = new Data();//Dataクラスのインスタンス作成
-            //リマインド開始時間に入力された値をintに変換するメソッドを実行
-            int startHour = NumEnter(RemindStartHour.Text);
-            int startMinute = NumEnter(RemindStartMinute.Text);
-
-
+            //タイトルと内容回収
             data.SetTitle(TitleTextBox.Text);
-            data.Content = TitleTextBox.Text;
-            data.CheckStartNow = checkStartNow.Checked;
-            data.RemindStart = DaySelect(SelectDayCombox.SelectedIndex);
-          
+            data.Content = ContentTextbox.Text;
 
+            if (checkStartNow.Checked)
+            {
+                //今からスタートにチェックが入ってた場合の処理を作る
+            }
+            else
+            {   
+                //リマインド開始時間に入力された値をintに変換するメソッドを実行
+                int startHour = NumEnter(RemindStartHour.Text);
+                int startMinute = NumEnter(RemindStartMinute.Text);
+                TimeSpan remindStart = new TimeSpan(startHour, startMinute, 0);//時・分・秒の設計図を使い、一つの枠にまとめた
+
+                //コンボボックスの選択肢によって日付の取得
+                DateTime startDay = DaySelect(SelectDayCombox.SelectedIndex);
+                //日付と時刻を合体し、データインスタンスへぶち込む
+                data.RemindStart = startDay + remindStart;
+            }
+            //何日起きにリマインドする点のやつ
+            int intervalDay = NumEnter(RemindPerDay.Text);
+            int intervalHour = NumEnter(RemindPerHour.Text);
+            int intervalMinute = NumEnter(RemindPerMinute.Text);
+
+            //日付・時刻をインスタンスへぶち込む
+            data.RemindInterval = new TimeSpan(intervalDay, intervalHour, intervalMinute, 0);
         }
 
         private void SelectDayCombox_SelectedIndexChanged(object sender, EventArgs e)
